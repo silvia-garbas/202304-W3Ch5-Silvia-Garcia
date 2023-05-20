@@ -1,19 +1,15 @@
-/* eslint-disable no-unused-vars */
 import { Component } from './component';
 
 export class Footer extends Component {
-  constructor(selector: string, public brand: string) {
+  constructor(selector: string) {
     super(selector);
     this.template = this.createTemplate();
     this.render();
-    console.log(this.element);
   }
 
   createTemplate() {
-    return `
-    <footer>
-      <address>${this.brand}</address>
-    </footer>
-    `;
+    return `<footer class="footer">
+              <img class="footer__img" src="/footer-pic.png" alt="Pokeball image" width=50 height=50>
+            </footer>`;
   }
 }

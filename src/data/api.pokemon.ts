@@ -1,43 +1,19 @@
-import { Pokemon } from "../model/pokemon";
+import { PokemonInfo } from '../model/pokemon';
 
-export class ApiPokemon {
-  url: string;
+export class PokeAki {
+  pokeUrl: string;
   constructor() {
-    this.url = 'https://pokeapi.co/api/v2/pokemon/';
+    this.pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=150&offset=0';
   }
 
   async getAll() {
-    const response = await fetch(this.url);
+    const response = await fetch(this.pokeUrl);
     return response.json();
   }
 
-  async get(id: Pokemon['id']) {
-    const response = await fetch(this.url + id);
+  async getPokemon(url: PokemonInfo['url']) {
+    const response = await fetch(url);
+    console.log(response);
     return response.json();
-  }
-
-  async create(pokemon: Partial<Pokemon>) {
-    const response = await fetch(this.url, {
-      method: 'POST',
-      body: JSON.stringify(pokemon),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    return response.json();
-  }
-
-  async update(id: Pokemon['id'], pokemon: Partial<Pokemon>) {
-    const response = await fetch(this.url + id, {
-      method: 'PATCH',
-      body: JSON.stringify(pokemon),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    return response.json();
-  }
-
-  async delete(id: Pokemon['id']) {
-    const response = await fetch(this.url + id, {
-      method: 'DELETE',
-    });
-    return response.ok;
   }
 }
