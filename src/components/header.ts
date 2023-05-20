@@ -3,7 +3,7 @@
 import { Component } from './component';
 
 export class Header extends Component {
-  constructor(selector: string, public title: string) {
+  constructor(selector: string) {
     super(selector);
     this.template = this.createTemplate();
     this.render();
