@@ -16,6 +16,7 @@ export class Card extends Component {
     this.pokemon = await this.repository.getAll();
     console.log(this.pokemon);
     console.log(this.pokemon.results);
+
     this.template = this.createTemplate();
     this.render();
   }
@@ -23,7 +24,7 @@ export class Card extends Component {
   createTemplate() {
     const list = this.pokemon.results
       .map(
-        (item: any) => `
+        (item: { name: string; url: string }) => `
            <li>
       <p>${item.name}</p>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${

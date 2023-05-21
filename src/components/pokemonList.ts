@@ -1,11 +1,11 @@
 import { PokeAki } from '../data/api.pokemon';
-import { Pokemon } from '../model/pokemon';
+
 import { Component } from './component';
 
 // TEMP import './tasks.list.css';
 
 export class PokemonList extends Component {
-  pokemons: Pokemon[];
+  pokemons: [];
   pokeRepo: PokeAki;
   constructor(selector: string) {
     super(selector);
@@ -30,19 +30,14 @@ export class PokemonList extends Component {
     this.render();
   }
 
-  async handleGetOne(event: Event) {
-    const element = event.target;
-    const url = element.dataset.id as string;
-    this.pokeRepo.getPokemon(url);
-  }
 
   createTemplate() {
     console.log(this.pokemons);
-    const balls = this.pokemons.results
+    const balls = this.pokemons
       .map(
-        (item) => `
+        (item: {name:string, url:string}) => `
     <li>
-      <p>${item.name}</p>
+      <p>${item.name.toLocaleUpperCase}</p>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${
         item.url.split('/')[6]
       }.gif" heigh=100 width=100>
