@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684672922575" clover="3.2.0">
-  <project timestamp="1684672922575" name="All files">
+<coverage generated="1684688445583" clover="3.2.0">
+  <project timestamp="1684688445583" name="All files">
     <metrics statements="23" coveredstatements="21" conditionals="3" coveredconditionals="1" methods="7" coveredmethods="6" elements="33" coveredelements="28" complexity="0" loc="23" ncloc="23" packages="1" files="3" classes="3"/>
     <file name="component.ts" path="C:\Users\usuario\Desktop\Bootcamp - Semanas\Semana 3\Challenge5\src\components\component.ts">
       <metrics statements="10" coveredstatements="8" conditionals="3" coveredconditionals="1" methods="3" coveredmethods="2"/>
