@@ -1,11 +1,11 @@
 import { PokeAki } from '../data/api.pokemon';
-import { PokemonInfo } from '../model/pokemon';
+import { Pokemon } from '../model/pokemon';
 import { Component } from './component';
 
 // TEMP import './tasks.list.css';
 
 export class PokemonList extends Component {
-  pokemons: PokemonInfo[];
+  pokemons: Pokemon[];
   pokeRepo: PokeAki;
   constructor(selector: string) {
     super(selector);

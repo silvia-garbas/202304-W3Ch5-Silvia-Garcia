@@ -1,8 +1,8 @@
 import { Component } from './component';
-import { PokemonInfo } from '../model/pokemon';
+import { Pokemon } from '../model/pokemon';
 import { PokeAki } from '../data/api.pokemon';
 export class Card extends Component {
-  pokemon!: PokemonInfo[];
+  pokemon!: Pokemon[];
   repository: PokeAki;
   constructor(selector: string) {
     super(selector);
@@ -35,7 +35,7 @@ export class Card extends Component {
       .join('');
 
     return `
-      <ul>${list}</ul>
+      <ul class="ul_main">${list}</ul>
       `;
   }
 }

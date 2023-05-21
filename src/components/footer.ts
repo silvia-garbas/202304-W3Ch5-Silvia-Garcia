@@ -1,7 +1,7 @@
 import { Component } from './component';
 
 export class Footer extends Component {
-  constructor(selector: string) {
+  constructor(selector: string, public title: string) {
     super(selector);
     this.template = this.createTemplate();
     this.render();
@@ -9,7 +9,7 @@ export class Footer extends Component {
 
   createTemplate() {
     return `<footer class="footer">
-              <img class="footer__img" src="/footer-pic.png" alt="Pokeball image" width=50 height=50>
+          <p class="footer_text">${this.title}</p>
             </footer>`;
   }
 }
