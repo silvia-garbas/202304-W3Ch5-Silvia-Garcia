@@ -1,4 +1,128 @@
-* {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+Previous Versions * {
   box-sizing: border-box;
 }
 
@@ -6,40 +130,42 @@ html,
 body {
   height: 100%;
   min-height: 100vh;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #067de6;
 }
 
 header {
   text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  padding: 0px 10px 40px 10px;
+  color: rgb(255, 203, 5);
+}
+.pokemon_logo {
+  margin: 0;
 }
 
-main ul {
+.ul_main {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding: 0;
   margin: 0 2rem 2rem 2rem;
 }
 
-/* main ul{
-  display: flex;
-  flex-direction: column;
-
-} */
-
-
 li {
   list-style: none;
   text-align: center;
-  border: 2px solid rgb(59, 91, 167);
+  border: 2px solid rgb(255, 203, 5);
   border-radius: 10px;
   margin: 1rem;
   padding: 1rem;
+  background-color: rgb(59 110 140);
 }
 
 li p {
   font-weight: bold;
   font-size: 1rem;
-  color: rgb(59, 91, 167);
+  color: rgb(255, 203, 5);
 }
 
 li a {
@@ -53,5 +179,24 @@ li a {
 
 footer {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: rem;
+  color: rgb(255, 203, 5);
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+/* .menu__favorite {
+  display: block;
+width: 100%;
+  background-color:rgb(59 110 140)
+
+  
+}
+
+ */
+
+.menu__ul {
+  display: flex;
+  justify-content: center;
 }
