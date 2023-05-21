@@ -1,31 +1,30 @@
 import { Component } from './component';
 import { Pokemon } from '../model/pokemon';
-import { PokeAki } from '../data/api.pokemon';
+import { ApiPokemon } from '../data/api.pokemon.repository';
 export class Card extends Component {
   pokemon!: Pokemon[];
-  repository: PokeAki;
+  repository: ApiPokemon;
   constructor(selector: string) {
     super(selector);
     this.pokemon = [];
     console.log(this.pokemon);
-    this.repository = new PokeAki();
+    this.repository = new ApiPokemon();
     this.handleLoad();
   }
 
   async handleLoad() {
     this.pokemon = await this.repository.getAll();
     console.log(this.pokemon);
-    console.log(this.pokemon.results);
     this.template = this.createTemplate();
     this.render();
   }
 
   createTemplate() {
-    const list = this.pokemon.results
+    const list = this.pokemon
       .map(
-        (item: any) => `
+        (item: { name: string; url: string }) => `
            <li>
-      <p>${item.name}</p>
+      <p>${item.name.toUpperCase()}</p>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${
         item.url.split('/')[6]
       }.gif" heigh=100 width=100>

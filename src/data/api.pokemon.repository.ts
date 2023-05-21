@@ -1,14 +1,15 @@
 import { Pokemon } from '../model/pokemon';
 
-export class PokeAki {
-  pokeUrl: string;
+export class ApiPokemon {
+  url: string;
   constructor() {
-    this.pokeUrl = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
+    this.url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
   }
 
   async getAll() {
-    const response = await fetch(this.pokeUrl);
-    return response.json();
+    const response = await fetch(this.url);
+    const pokeList = await response.json();
+    return pokeList.results
   }
 
   async getPokemon(url: Pokemon['url']) {
