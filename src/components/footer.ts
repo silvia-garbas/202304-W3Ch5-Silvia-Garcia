@@ -2,7 +2,7 @@ import { Component } from './component';
 
 export class Footer extends Component {
   // eslint-disable-next-line no-unused-vars
-  constructor(selector: string, public title: string) {
+  constructor(selector: string) {
     super(selector);
     this.template = this.createTemplate();
     this.render();
@@ -11,11 +11,8 @@ export class Footer extends Component {
   createTemplate() {
     return `
     <footer class="footer">
-    <p class="footer_text">${this.title}</p>
+    <p class="footer_text">Pokemon things ®</p>
     </footer>`;
   }
 }
 
-//  <span class="footer__copyright" role="phrase">
-//    Pokemon Copyright
-//  </span>;

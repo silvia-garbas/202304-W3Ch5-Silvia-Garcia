@@ -3,17 +3,17 @@ import { Pokemon } from '../model/pokemon';
 import { ApiPokemon } from '../data/api.pokemon.repository';
 export class Card extends Component {
   pokemon!: Pokemon[];
-  repository: ApiPokemon;
+  repo: ApiPokemon;
   constructor(selector: string) {
     super(selector);
     this.pokemon = [];
     console.log(this.pokemon);
-    this.repository = new ApiPokemon();
+    this.repo = new ApiPokemon();
     this.handleLoad();
   }
 
   async handleLoad() {
-    this.pokemon = await this.repository.getAll();
+    this.pokemon = await this.repo.getAll();
     console.log(this.pokemon);
     this.template = this.createTemplate();
     this.render();

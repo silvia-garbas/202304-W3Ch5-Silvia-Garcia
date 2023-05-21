@@ -2,7 +2,6 @@
 
 import { Component } from './component';
 
-
 export class Menu extends Component {
   constructor(public selector: string) {
     super(selector);
